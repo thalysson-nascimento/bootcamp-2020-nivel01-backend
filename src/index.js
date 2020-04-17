@@ -30,6 +30,7 @@ function validateProjectId(req, res, next){
 }
 
 app.use(logRequest);
+app.use('/projects/:id', validateProjectId);
 
 app.get('/projects', (req,res) => {
     const { title } = req.query;
